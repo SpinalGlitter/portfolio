@@ -1,50 +1,58 @@
+import Image from "next/image";
+
 export default function Home() {
   const projects = [
     {
-      title: "Nordic Commerce",
+      title: "Kino site",
       description:
-        "E‑handel med snabb checkout, rekommendationer och optimerad SEO.",
-      tags: ["Next.js", "Stripe", "SEO"],
+        "En webbplats för en biograf med eget bokningssystem, byggd med Next.js.",
+      tags: ["Next.js", "Express", "Tailwind"],
+      href: "https://kino-fullstack-jp.vercel.app",
     },
     {
-      title: "Studio Atlas",
+      title: "Wordle game",
       description:
-        "Marknadssajt med prisplaner, bokningsflöde och hög konvertering.",
-      tags: ["Design", "Content", "Analytics"],
+        "Ett ordgissningsspel inspirerat av Wordle, utvecklat med React.",
+      tags: ["Design", "React", "API"],
+      href: "https://github.com/SpinalGlitter/Wordle",
     },
     {
-      title: "FlowDash",
-      description: "Dashboard för KPI:er och rapporter med realtidsdata.",
-      tags: ["React", "Charts", "API"],
+      title: "Fishing Diary",
+      description:
+        "En mobilapp för att logga och dokumentera fiskefångster, skapad med React Native.",
+      tags: [
+        "React Native",
+        "React Native Maps",
+        "Expo",
+        "PostgreSQL",
+        "Supabase",
+      ],
+      href: "https://github.com/EmpyreanMist/Fishing-Diary",
     },
   ];
 
   const experience = [
     {
-      role: "Systemutvecklare",
-      company: "Freelance",
-      period: "2022 — Nu",
+      role: "Systemutvecklare i Java & JavaScript",
+      company: "Lernia Yrkeshögskola",
+      period: "2024 — Nu",
       summary:
-        "Bygger snabba och tillgängliga webbsidor för små och medelstora företag.",
-    },
-    {
-      role: "Systemutvecklare",
-      company: "Studio Nord",
-      period: "2020 — 2022",
-      summary:
-        "Levererade webbprojekt från idé till lansering med fokus på UX.",
+        "Detta är några av kurserna jag läst: Arbetsmetidik och agila projektmetoder, Avancerad webbutveckling fullstack, Interaktionsdesign och användbarhet, Systemutveckling Java, Systemarkitektur Java, Backendutveckling och systemintegration Java",
     },
   ];
 
   const skills = [
     "Next.js",
     "React",
+    "React Native",
     "TypeScript",
     "Tailwind",
     "SEO",
     "UX/UI",
-    "Content",
-    "Analytics",
+    "Java",
+    "Spring Boot",
+    "SQL",
+    "Git",
   ];
 
   return (
@@ -52,7 +60,7 @@ export default function Home() {
       <header className="border-b border-white/10 bg-zinc-950/80 backdrop-blur">
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-6">
           <a href="#hem" className="text-lg font-semibold tracking-tight">
-            JP.
+            JP
           </a>
           <nav className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
             <a className="hover:text-white" href="#om">
@@ -85,14 +93,14 @@ export default function Home() {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-200">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Tillgänglig för nya uppdrag
+              Tillgänglig
             </div>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               Johannes Persson
             </h1>
             <p className="text-lg text-zinc-300">
-              Frontendutvecklare som bygger snabba, snygga och mätbara
-              webbupplevelser med Next.js.
+              Studerar för närvarande Systemutvecklare i Java & JavaScript vid
+              Lernia yrkeshögskola. Förväntad examen i juni 2026.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -109,36 +117,48 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-zinc-400">
-              <span>Stockholm, Sverige</span>
-              <span>3+ år erfarenhet</span>
-              <span>Levererar inom 2–4 veckor</span>
+              <span>Hudiksvall, Sverige</span>
             </div>
           </div>
+
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="h-14 w-14 rounded-2xl bg-white/10" />
+                <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-white/10">
+                  <Image
+                    src="/jp.jpg"
+                    alt="Johannes Persson"
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                    priority
+                  />
+                </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Specialitet</p>
-                  <p className="text-lg font-semibold">
-                    Performance & konvertering
-                  </p>
+                  <p className="text-lg font-semibold">Johannes Persson</p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-2xl font-semibold">20+</p>
-                  <p className="text-sm text-zinc-400">Levererade projekt</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-2xl font-semibold">98%</p>
-                  <p className="text-sm text-zinc-400">Nöjda kunder</p>
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-zinc-300">
-                Jag hjälper företag att lansera snabbt, mäta resultat och
-                iterera med tydliga mål.
-              </div>
+
+              <ul className="grid gap-3 text-sm text-zinc-300">
+                <li className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-zinc-400">Utbildning:</span>{" "}
+                  Systemutvecklarstudent (Java & JavaScript)
+                </li>
+                <li className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-zinc-400">Examen:</span> Juni 2026
+                </li>
+                <li className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-zinc-400">Ålder:</span> 37 år
+                </li>
+                <li className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-zinc-400">Intressen:</span> Fiske, IT,
+                  Sport i allmänhet, Fotboll i synnerhet
+                </li>
+                <li className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-zinc-400">Bor:</span> Hudiksvall,
+                  Eskilstuna Sverige
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -147,17 +167,20 @@ export default function Home() {
           <h2 className="text-2xl font-semibold">Om mig</h2>
           <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
             <p className="text-zinc-300">
-              Jag kombinerar designkänsla med teknisk noggrannhet för att skapa
-              webbplatser som känns premium och presterar på topp. Fokus ligger
-              på tillgänglighet, snabba laddtider och tydlig konvertering.
+              Systemutvecklarstudent med fokus på Java och JavaScript, förväntad
+              examen våren 2026. Har erfarenhet av både frontend- och
+              backendutveckling genom projekt med React, Next.js, Node.js och
+              Java/Spring Boot. Erfarenhet av att arbeta agilt i team med
+              Git/GitHub och Scrum, och brinner för att utveckla användarvänliga
+              och välstrukturerade system.
             </p>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <p className="text-sm text-zinc-400">Just nu</p>
               <p className="mt-2 text-lg font-semibold">
-                Bygger portfolio & klientprojekt
+                Bygger portfolio och söker praktikplats.
               </p>
               <p className="mt-2 text-sm text-zinc-400">
-                Hör gärna av dig om du vill lansera något nytt.
+                Hör gärna av dig om du undrar något.
               </p>
             </div>
           </div>
@@ -176,13 +199,16 @@ export default function Home() {
         <section id="projekt" className="space-y-6 py-16">
           <div className="flex items-end justify-between">
             <h2 className="text-2xl font-semibold">Utvalda projekt</h2>
-            <span className="text-sm text-zinc-400">2023 — 2026</span>
+            <span className="text-sm text-zinc-400">2024 — 2026</span>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {projects.map((project) => (
-              <div
+              <a
                 key={project.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30"
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/30"
               >
                 <h3 className="text-lg font-semibold">{project.title}</h3>
                 <p className="mt-2 text-sm text-zinc-300">
@@ -198,7 +224,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </section>
@@ -224,26 +250,26 @@ export default function Home() {
 
         <section id="kontakt" className="space-y-6 py-16">
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10">
-            <h2 className="text-2xl font-semibold">Vill du samarbeta?</h2>
+            <h2 className="text-2xl font-semibold">Kontakt</h2>
             <p className="mt-2 text-zinc-300">
-              Jag tar uppdrag inom webb, landningssidor och produktlanseringar.
-              Skicka en rad så sätter vi upp en plan.
+              Jag nås enklast via mail eller LinkedIn. Ser fram emot att höra
+              från dig!
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="mailto:hej@dinmail.se"
+                href="mailto:johannes.persson47@gmail.com"
                 className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-zinc-950"
               >
-                hej@dinmail.se
+                johannes.persson47@gmail.com
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/johannes-persson-179503329/"
                 className="rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white"
               >
                 LinkedIn
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/SpinalGlitter"
                 className="rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white"
               >
                 GitHub
